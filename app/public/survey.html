@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-FzkHk/sZxl/KbNoSMiA0TgjqdV7ka8VPX/i/Nf2EyhH28i1EVaZ7uf2EEDBBHBo5"
+        crossorigin="anonymous">
+    <!-- Chosen. Doesn't really work for me. Gonna try again. -->
+    <script src="https://cdn.jsdelivr.net/npm/chosen-js@1.8.2/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chosen-js@1.8.2/chosen.min.css">
+    <title>FriendFinder Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>
+            Survey Questions
+        </h2>
+        <hr size=2>
+        <h4>
+            <strong>Your Info</strong>
+        </h4>
+        <h5>Name (Required)</h5>
+        <input type="text" id="name" class="form-control" required>
+        <br>
+        <h5>Link to Photo (Required)</h5>
+        <input type="text" id="photo" class="form-control" required>
+        <hr size=2>
+        <h4>
+            <strong>Question 1</strong>
+        </h4>
+        <h5>
+            It's better to act based on your emotions rather than logic.
+        </h5>
+        <select data-placeholder="Select an Option" class="chosen-select" style="display: none">
+            <option value></option>
+            <option value="1">1 (Strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly agree)</option>
+        </select>
+        <div class="chosen-container chosen-container-single" title style="width: 350px;">
+            <a class="chosen-single chosen-default">
+                <span>Select an Option</span>
+                <div>
+                    <b></b>
+                </div>
+            </a>
+            <div class="chosen-drop chosen-select">
+                <ul class="chosen-results">
+                    <li class="active-result" data-option-array-index="1" style>1 (Strongly disagree)</li>
+                    <li class="active-result" data-option-array-index="2" style>2</li>
+                    <li class="active-result" data-option-array-index="3" style>3</li>
+                    <li class="active-result" data-option-array-index="4" style>4</li>
+                    <li class="active-result" data-option-array-index="5" style>5 (Strongly agree)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery(".chosen-select").chosen();
+        });
+    </script>
+</body>
+
+</html>
