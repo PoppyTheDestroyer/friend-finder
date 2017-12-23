@@ -41,7 +41,7 @@
             <h5>
                 It's better to act based on your emotions rather than logic.
             </h5>
-            <select placeholder="Select an Option" id="q1" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q1" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -57,7 +57,7 @@
             <h5>
                 After spending time with large groups of people, I need time alone to recharge.
             </h5>
-            <select placeholder="Select an Option" id="q2" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q2" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -73,7 +73,7 @@
             <h5>
                 Dogs are better than cats.
             </h5>
-            <select placeholder="Select an Option" id="q3" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q3" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -89,7 +89,7 @@
             <h5>
                 You enjoy reading books.
             </h5>
-            <select placeholder="Select an Option" id="q4" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q4" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -105,7 +105,7 @@
             <h5>
                 People who disagree with you on important issue are idiots.
             </h5>
-            <select placeholder="Select an Option" id="q5" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q5" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -121,7 +121,7 @@
             <h5>
                 It's ok to lie to spare someone's feelings.
             </h5>
-            <select placeholder="Select an Option" id="q6" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q6" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -137,7 +137,7 @@
             <h5>
                 You get upset easily when things don't go according to plan.
             </h5>
-            <select placeholder="Select an Option" id="q7" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q7" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -153,7 +153,7 @@
             <h5>
                 Other people's feelings are not important to you.
             </h5>
-            <select placeholder="Select an Option" id="q8" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q8" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -169,7 +169,7 @@
             <h5>
                 The happiness and wellbeing of your family and friends are more important than your own.
             </h5>
-            <select placeholder="Select an Option" id="q9" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q9" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -185,7 +185,7 @@
             <h5>
                 You find it difficult to forget about work-related stress during your free time.
             </h5>
-            <select placeholder="Select an Option" id="q10" class="form-control" style="width: 350px;">
+            <select data-placeholder="" id="q10" class="form-control" style="width: 350px;">
                 <option value="">Select an Option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -216,17 +216,23 @@
 
             function validate() {
                 var isValid = true;
-                $(."form-control").each(function () {
-                    if ($(this).value === "") {
+                $(".validate").each(function () {
+                    if ($(this).val() === "") {
                         isValid = false;
                     }
                 })
+                $('.browser-default').each(function() {
+                if ($(this).val() === ""){
+                    isValid = false;
+                }
+            });
+
                 return isValid;
             }
             if (validate()) {
                 var userInfo = {
-                    name: $("#name").val(),
-                    photo: $("#photo").val(),
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
                     scores: [
                         $("q1").val(),
                         $("q2").val(),
