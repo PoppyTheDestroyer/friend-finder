@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -19,5 +20,4 @@ app.get("/survey", function(req, res) {
 app.post("/api/new", function(req, res) {
     var newUser = req.body;
     console.log(newUser);
-    
-})
+});
