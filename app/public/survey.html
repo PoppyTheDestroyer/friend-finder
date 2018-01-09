@@ -219,11 +219,13 @@
                 $(".validate").each(function () {
                     if ($(this).val() === " ") {
                         isValid = false;
+                        alert("Please enter a response to all questions to continue, or die alone. Your choice.")
                     }
                 })
                 $(".browser-default").each(function() {
                 if ($(this).val() === ""){
                     isValid = false;
+                    alert("Please enter a response to all questions to continue, or die alone. Your choice.")
                 }
             });
 
