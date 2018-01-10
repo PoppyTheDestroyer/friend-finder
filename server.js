@@ -1,6 +1,4 @@
 /*jshint esversion: 6 */
-import { request } from "https";
-
 
 const express = require("express");
 const bodyParser = require("body-parser");
